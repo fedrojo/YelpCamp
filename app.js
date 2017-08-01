@@ -36,8 +36,8 @@ app.use(flash());
 //Connect and will create if DB does not exist
 // mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
 // mongoose.connect("mongodb://fedrojo:Malena09@ds129053.mlab.com:29053/yelp_camp_fedrojo", {useMongoClient: true});
-
-mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(url, {useMongoClient: true});
 
 
 
